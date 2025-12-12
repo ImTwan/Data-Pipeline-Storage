@@ -1,0 +1,27 @@
+[project]
+name = "project6"
+version = "0.1.0"
+description = "Data Pipeline for MongoDB → GCS → BigQuery"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "google-cloud-bigquery",
+    "google-cloud-storage",
+    "google-auth",
+    "pymongo",
+    "flask"
+]
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["project6"]
+
+[project.scripts]
+export = "project6.export:export_to_gcs"
+load-data = "project6.load_data:load_jsonl_to_bigquery"
+trigger-gcp = "project6.trigger_bigquery_test_on_GCP:trigger_bigquery_load_GCP"
+trigger-local = "project6.trigger_bigquery_test_on_local:trigger_bigquery_load"
