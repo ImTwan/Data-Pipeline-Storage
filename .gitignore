@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Deal with large files
+data/csv/
+data/tmp/
