@@ -40,4 +40,15 @@ From project root:
  uv run src/project6/trigger_bigquery_test_on_local.py
 ```
 
+## 4. Project Overview
+This project is a continuation of Project 5: Data Collection, Storage, and Foundation (link to project: https://github.com/ImTwan/Project-05-Data-Collection-Storage-Foundation?tab=readme-ov-file#data-collection-storage-foundation). The deliverables of this project are:
+* Automated data pipeline
+* Cloud Function triggers
+* BigQuery tables
+* Monitoring setup
+Both project follows the workflow
+
+
+### 4.1. Data Export Process
+
 
