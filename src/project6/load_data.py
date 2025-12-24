@@ -79,8 +79,23 @@ product_ids_to_crawl_schema = [
 ]
 
 crawl_product_ids_schema = [
-    bigquery.SchemaField("product_id", "INTEGER"),
+    bigquery.SchemaField("product_id", "STRING", mode="NULLABLE"), 
+    bigquery.SchemaField("name", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("product_type", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("sku", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("price", "FLOAT", mode="NULLABLE"),
+    bigquery.SchemaField("min_price", "FLOAT", mode="NULLABLE"),
+    bigquery.SchemaField("max_price", "FLOAT", mode="NULLABLE"),
+    bigquery.SchemaField("qty", "INTEGER", mode="NULLABLE"),
+    bigquery.SchemaField("collection_id", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("collection", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("category", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("category_name", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("store_code", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("gender", "STRING", mode="NULLABLE"),
 ]
+
+
 
 summary_schema = [
     bigquery.SchemaField("_id", "STRING"),  
@@ -186,8 +201,8 @@ load_jsonl_to_bigquery(
 load_jsonl_to_bigquery(
     PROJECT_ID,
     DATASET_ID,
-    "crawl_product_id",
-    "gs://twan_glamira/dataset_export/valid_product_ids.jsonl",
+    "crawl_product",
+    "gs://twan_glamira/dataset_export/product_info.jsonl",
     crawl_product_ids_schema
 )
 
@@ -197,8 +212,8 @@ load_jsonl_to_bigquery(
     DATASET_ID,
     "glamira_raw",
     "gs://twan_glamira/dataset_export/summary/summary_*.jsonl",
-    summary_schema,
-    bigquery.WriteDisposition.WRITE_APPEND
+    summary_schema
+   # bigquery.WriteDisposition.WRITE_APPEND
 )
 
 

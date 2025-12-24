@@ -61,7 +61,7 @@ def export_to_gcs():
         csv_files = [
             r"D:\python try hard\unigap\project6\data\csv\ip_location_results.csv",
             r"D:\python try hard\unigap\project6\data\csv\product_ids_to_crawl.csv",
-            r"D:\python try hard\unigap\project6\data\csv\valid_product_ids.csv"
+            r"D:\python try hard\unigap\project6\data\csv\product_info.csv"
         ]
 
         # BUCKET_NAME = "project5a"
