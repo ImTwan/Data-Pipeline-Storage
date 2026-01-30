@@ -1,4 +1,4 @@
-# Project 06: Data Pipeline & Storage
+# Data Pipeline & Storage
 ## 1. Project Structure
 <pre>
 project-6/
@@ -88,3 +88,4 @@ curl -X POST "https://prj6-1013748103239.us-central1.run.app" \
 > -d '{  "name": "THE FILES on GCS BUCKET YOU WANT TO TEST(For example: dataset_export/ip_location_results.jsonl)",  "bucket": "YOUR BUCKET'S NAME ON GCS BUCKET",  "contentType": "application/json",  "metageneration": "1",  "timeCreated": "2020-04-23T07:38:57.230Z",  "updated": "2020-04-23T07:38:57.230Z" }'
 
 ```
+
